@@ -34,6 +34,7 @@ class SearchSolution(Base):
 
         self.set_up_faiss()
 
+    # create indexer from reg_matrix
     def set_up_faiss(self):
         dim = 512
         self.index = faiss.index_factory(dim, 'IVF1000,Flat')
