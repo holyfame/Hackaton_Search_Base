@@ -51,4 +51,4 @@ class SearchSolution(Base):
 
     def insert(self, feature: np.array) -> None:
         self.reg_matrix = np.concatenate(self.reg_matrix, feature, axis=0)
-        self.set_up_faiss()
+        self.index.add(np.array([feature]).astype('float32'))
